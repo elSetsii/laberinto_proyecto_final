@@ -1,6 +1,6 @@
 # laberinto_proyecto_final
 ## Descripcion del proyecto
-- Es un juego donde deberas cruzar un laberinto
+- Es un juego donde deberás cruzar un laberinto
 ## Como ejecutarlo?
 - Para ejecutarlo deberas escoger un nivel
 - Cuando este inicie tendras un tiempo limite dependiendo del nivel que escojas
