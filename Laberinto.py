@@ -55,3 +55,10 @@ def mover(direccion, nivel, posicion):
     elif direccion == "d" and y < len(laberintos[nivel][0])-1 and laberintos[nivel][x][y+1] != "#":
         y += 1
     return [x, y]
+
+def menu_pausa():
+    print("\n**Juego en pausa**")
+    print("1.Continuar")
+    print("2.Reiniciar nivel")
+    print("3.Volver al menu principal")
+    opcion_pausa = input("Selecciona una opción (1-3):")
