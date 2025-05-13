@@ -19,15 +19,20 @@ laberintos = [
         ["#", "#", " ", "#", "#", " ", " ", " ", " ", "#"],
         ["#", " ", " ", " ", " ", " ", "#", "#", " ", "#"],
         ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]
-    ]
+    ],
+     [  # Nivel 3
+        ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#","#", "#", "#", "#"],
+        ["#", "P", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ","E", "#"],
+        ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#","#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]
+     ]
 ]
-tiempos = [40,35]
+tiempos = [40, 35, 4]
 def mostrar_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Selecciona una opción:")
     for i in range(len(laberintos)):
         print(f"{i+1}. Nivel {i+1} (Tiempo límite: {tiempos[i]} segundos)")
-    print("3. Salir")
+    print("4. Salir")
     opcion = int(input("Elige un número (1-3): "))
     return opcion
     
@@ -65,7 +70,7 @@ def menu_pausa():
 while True:
     opcion = mostrar_menu()
     
-    if opcion == 3:  
+    if opcion == 4:  
         print("¡Gracias por jugar!")
         break
     
