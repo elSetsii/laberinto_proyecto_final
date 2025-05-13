@@ -33,7 +33,18 @@ def mostrar_menu():
     for i in range(len(laberintos)):
         print(f"{i+1}. Nivel {i+1} (Tiempo límite: {tiempos[i]} segundos)")
     print("4. Salir")
-    opcion = int(input("Elige un número (1-3): "))
+    
+    while True: #blucle para evitar que se rompa cuando se ingrese un dato invalido
+        try:
+            opcion = int(input("Elige un número (1-4): "))  # Ajustado para incluir opción 4
+            if 1 <= opcion <= 4:
+                return opcion
+            else:
+                print("Por favor, elige un número válido (1-4).")
+        except ValueError:
+            print("Entrada inválida. Debes ingresar un número.")
+    
+    opcion = int(input("Elige un número (1-4): "))
     return opcion
     
 def mostrar_laberinto(nivel, posicion, tiempo_restante):
