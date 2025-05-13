@@ -43,3 +43,15 @@ def mostrar_laberinto(nivel, posicion, tiempo_restante):
             else:
                 fila += laberintos[nivel][i][j] + " "
         print(fila)
+
+def mover(direccion, nivel, posicion):
+    x, y = posicion
+    if direccion == "w" and x > 0 and laberintos[nivel][x-1][y] != "#":
+        x -= 1
+    elif direccion == "s" and x < len(laberintos[nivel])-1 and laberintos[nivel][x+1][y] != "#":
+        x += 1
+    elif direccion == "a" and y > 0 and laberintos[nivel][x][y-1] != "#":
+        y -= 1
+    elif direccion == "d" and y < len(laberintos[nivel][0])-1 and laberintos[nivel][x][y+1] != "#":
+        y += 1
+    return [x, y]
