@@ -13,4 +13,21 @@
 - Muestra las opciones segun los niveles agregados al programa
 - Asi como también da la opción de cerrar el programa
 2. Mostrar laberinto
-- Esta función
+- Esta función muestra el nivel que has elegido
+- Así como también el tiempo restante el tiempo que te queda en el nivel
+- Utiliza dos ciclos "for" anidados para mostrar la posicion del jugador
+3. Mover
+- Esta función ubica al jugador al inicio
+- También es la que mueve al jugador y lo ubica dependiendo de
+   las teclas que oprime
+4. Menu pausa
+- Esta función imprime el menu de pausa cuando el jugador pausa el juego
+- Asi como también realiza las funciones del mismo
+## Integrantes 
+### Seth Gabriel Morales Luévano
+- Realizacion de ciclos for en el programa
+- Diseño de ciclos en el programa principal
+### Eduardo González Sánchez 
+- Diseño de menus
+- Diseño de niveles
+- Navegación en el programa 
