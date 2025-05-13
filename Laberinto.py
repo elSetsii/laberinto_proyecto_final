@@ -28,7 +28,7 @@ laberintos = [
     ]
 ]
 
-tiempos = [40, 35, 45]
+tiempos = [40, 35, 4]
 
 def mostrar_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -36,16 +36,16 @@ def mostrar_menu():
     for i in range(len(laberintos)):
         print(f"{i+1}. Nivel {i+1} (Tiempo límite: {tiempos[i]} segundos)")
     print("4. Salir")
-    
+
     while True:
         try:
             opcion = int(input("Elige un número (1-4): "))
             if 1 <= opcion <= 4:
                 return opcion
             else:
-                print("Por favor, elige un número válido (1-4).")
+                print("Por favor, elige un número válido.")
         except ValueError:
-            print("Entrada inválida. Debes ingresar un número.")
+            print("Entrada inválida. Ingresa un número.")
 
 def mostrar_laberinto(nivel, posicion, tiempo_restante):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -81,21 +81,23 @@ def menu_pausa():
         if opcion in ("1", "2", "3"):
             return opcion
         else:
-            print("Opción inválida. Elige 1, 2 o 3.")
+            print("Opción inválida. Intenta de nuevo.")
 
-# Bucle principal
+# Bucle principal del juego
 while True:
     opcion = mostrar_menu()
     
-    if opcion == 4:
+    if opcion == 4:  
         print("¡Gracias por jugar!")
         break
-
+    
     nivel_actual = opcion - 1
     posicion = [1, 1]
     tiempo_limite = tiempos[nivel_actual]
     inicio = time.time()
 
+    print(f"¡Nivel {nivel_actual + 1} seleccionado! Tienes {tiempo_limite} segundos para salir del laberinto.")
+    
     while laberintos[nivel_actual][posicion[0]][posicion[1]] != "E":
         tiempo_restante = tiempo_limite - (time.time() - inicio)
 
@@ -105,18 +107,18 @@ while True:
 
         mostrar_laberinto(nivel_actual, posicion, tiempo_restante)
         direccion = input("Movimiento (W/A/S/D/P para pausar): ").lower()
-
+        
         if direccion == "p":
             opcion_pausa = menu_pausa()
-            if opcion_pausa == "1":
+            if opcion_pausa == "1":  # Continuar
                 inicio = time.time() - (tiempo_limite - tiempo_restante)
                 continue
-            elif opcion_pausa == "2":
+            elif opcion_pausa == "2":  # Reiniciar nivel
                 posicion = [1, 1]
                 inicio = time.time()
                 continue
-            elif opcion_pausa == "3":
-                break  # vuelve al menú principal
+            elif opcion_pausa == "3":  # Volver al menú principal
+                break
         else:
             posicion = mover(direccion, nivel_actual, posicion)
 
@@ -124,4 +126,3 @@ while True:
         print("¡Felicidades, encontraste la salida a tiempo!")
 
     input("Presiona Enter para volver al menú...")
-    
