@@ -62,3 +62,18 @@ def menu_pausa():
     print("2.Reiniciar nivel")
     print("3.Volver al menu principal")
     opcion_pausa = input("Selecciona una opción (1-3):")
+
+while True:
+    opcion = mostrar_menu()
+    
+    if opcion == 3:  
+        print("¡Gracias por jugar!")
+        break
+    
+    nivel_actual = opcion - 1
+    posicion = [1, 1]
+    tiempo_limite = tiempos[nivel_actual]
+    inicio = time.time()
+    pausado = False
+
+    print(f"¡Nivel {nivel_actual + 1} seleccionado! Tienes {tiempo_limite} segundos para salir del laberinto.")
