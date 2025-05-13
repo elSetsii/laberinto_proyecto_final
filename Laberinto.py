@@ -35,4 +35,11 @@ def mostrar_menu():
 def mostrar_laberinto(nivel, posicion, tiempo_restante):
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f"Tiempo restante: {tiempo_restante:.1f} segundos (Presiona 'p' para pausar)")
-    for i in range
+    for i in range(len(laberintos[nivel])):
+        fila = ""
+        for j in range(len(laberintos[nivel][i])):
+            if [i, j] == posicion:
+                fila += "P "  
+            else:
+                fila += laberintos[nivel][i][j] + " "
+        print(fila)
