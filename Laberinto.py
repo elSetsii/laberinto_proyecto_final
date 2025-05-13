@@ -26,4 +26,9 @@ tiempos = [40,35]
 def mostrar_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Selecciona una opción:")
+    for i in range(len(laberintos)):
+        print(f"{i+1}. Nivel {i+1} (Tiempo límite: {tiempos[i]} segundos)")
+    print("3. Salir")
+    opcion = int(input("Elige un número (1-3): "))
+    return opcion
     
