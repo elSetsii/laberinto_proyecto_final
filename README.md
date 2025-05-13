@@ -1,12 +1,12 @@
-# laberinto_proyecto_final
+# laberinto proyecto final
 ## Descripcion del proyecto
 - Es un juego donde deberás cruzar un laberinto
 ## Como ejecutarlo?
-- Para ejecutarlo deberás escoger un nivel
+- Para ejecutarlo deberás **escoger un nivel**
 - Cuando este inicie tendrás un tiempo limite dependiendo del nivel que escojas
-- Para moverte deberás usar las teclas: w,s,a,d
-- cada vez que presiones una de estas teclas deberas presionar enter y asi 
-  verás como te mueves alrededor del laberinto
+- Para moverte deberás usar las teclas: *w,s,a,d*
+- ***cada vez que presiones una de estas teclas deberas presionar enter y asi 
+  verás como te mueves alrededor del laberinto***
 ## Lista de funciones implementadas
 1. Mostrar menú:
 - Esta función muestra el menu de inicio del programa
