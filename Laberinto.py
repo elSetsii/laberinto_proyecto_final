@@ -2,7 +2,6 @@ import os
 import time
 #laberintos
 laberintos = [ 
-[ 
     [  # Nivel 1
         ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
         ["#", "P", " ", "#", " ", " ", " ", " ", "E", "#"],
