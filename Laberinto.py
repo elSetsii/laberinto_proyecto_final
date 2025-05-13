@@ -21,7 +21,7 @@ laberintos = [
         ["#", " ", " ", " ", " ", " ", "#", "#", " ", "#"],
         ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]
     ]
-]
+]  
 tiempos = [40,35]
 def mostrar_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -77,3 +77,18 @@ while True:
     pausado = False
 
     print(f"¡Nivel {nivel_actual + 1} seleccionado! Tienes {tiempo_limite} segundos para salir del laberinto.")
+    
+    while laberintos[nivel_actual][posicion[0]][posicion[1]] != "E":
+        tiempo_restante = tiempo_limite - (time.time() - inicio)
+
+        if tiempo_restante <= 0:
+            print("¡Tiempo agotado! Has perdido.")
+            break
+
+        else:
+            posicion = mover(direccion, nivel_actual, posicion)
+
+    if laberintos[nivel_actual][posicion[0]][posicion[1]] == "E":
+        print("¡Felicidades, encontraste la salida a tiempo!")
+
+    input("Presiona Enter para volver al menú...")
