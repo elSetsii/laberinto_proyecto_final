@@ -124,6 +124,4 @@ while True:
         print("¡Felicidades, encontraste la salida a tiempo!")
 
     input("Presiona Enter para volver al menú...")
-
-    input("Presiona Enter para volver al menú...")
     
