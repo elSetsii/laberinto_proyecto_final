@@ -84,7 +84,30 @@ while True:
         if tiempo_restante <= 0:
             print("¡Tiempo agotado! Has perdido.")
             break
-
+        if not pausado:
+            mostrar_laberinto(nivel_actual, posicion, tiempo_restante)
+        
+        direccion = input("Movimiento (W/A/S/D/P para pausar): ").lower()
+        
+        if direccion == "p":
+            while True:
+                opcion_pausa = menu_pausa()
+                if opcion_pausa == "1":  # Continuar
+                    pausado = False
+                    inicio = time.time() - (tiempo_limite - tiempo_restante)
+                    break
+                elif opcion_pausa == "2":  # Reiniciar nivel
+                    posicion = [1, 1]  # Reinicia la posición
+                    inicio = time.time()  # Reinicia el tiempo
+                    break
+                elif opcion_pausa == "3":  # Volver al menú principal
+                    pausado = False
+                    break  # Sale del bucle de pausa
+            
+            if opcion_pausa == "3":  # Si la opción fue volver al menú
+                break  # Rompe el bucle del nivel y regresa al menú principal
+        
+        
         else:
             posicion = mover(direccion, nivel_actual, posicion)
 
@@ -92,3 +115,4 @@ while True:
         print("¡Felicidades, encontraste la salida a tiempo!")
 
     input("Presiona Enter para volver al menú...")
+    
