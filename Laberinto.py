@@ -21,7 +21,8 @@ laberintos = [
         ["#", " ", " ", " ", " ", " ", "#", "#", " ", "#"],
         ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]
     ]
-]  
+]
+] 
 tiempos = [40,35]
 def mostrar_menu():
     os.system('cls' if os.name == 'nt' else 'clear')
