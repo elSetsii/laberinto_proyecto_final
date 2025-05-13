@@ -33,7 +33,7 @@ def mostrar_menu():
     for i in range(len(laberintos)):
         print(f"{i+1}. Nivel {i+1} (Tiempo límite: {tiempos[i]} segundos)")
     print("4. Salir")
-    opcion = int(input("Elige un número (1-3): "))
+    opcion = int(input("Elige un número (1-4): "))
     return opcion
     
 def mostrar_laberinto(nivel, posicion, tiempo_restante):
